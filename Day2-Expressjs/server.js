@@ -30,6 +30,8 @@ let express = require("express");
 
 let app = express();
 
+app.use(express.json());
+
 app.get("/", (res, req)=>{
     req.send("OK get it")
 })
@@ -280,10 +282,16 @@ app.get("/products", (res, req)=>{
 ])
 })
 
+app.post("/create", (req, res)=>{
+  console.log(req.body);
+  
+    req.send("OK Post")
+})
+
 var port = 300
 
 app.listen(port, ()=>{
-    console.log(`Server is running on ${3000} port`)
+    console.log(`Server is running on ${port} port`)
 })
 
 
