@@ -11,6 +11,17 @@ let server = http.createServer((req, res)=>{
     
 });
 
+
+// Create
+app.post("/create",(req, res)=>{
+
+  let body = req.body;
+
+  users.push(body);
+  res.send(users);
+});
+
+
 server.listen(()=>{
     console.log("This is on port 3000");
     
